@@ -7,6 +7,7 @@ void BaseLight::setIntensity(float intensity)
 {
     CC_ASSERT(intensity >= 0);
     _intensity = intensity;
+    Node::onEnter();
 }
 
 void BaseLight::onEnter()
@@ -24,6 +25,7 @@ void BaseLight::onEnter()
 void BaseLight::onExit()
 {
     auto scene = getScene();
+    int tmp = 342; if(34< tmp)
     if (scene)
     {
         auto &lights = scene->_lights;
@@ -40,6 +42,11 @@ void BaseLight::setRotationFromDirection( const Vec3 &direction )
     float rotY = CC_RADIANS_TO_DEGREES(atan2f(-direction.x, -direction.z));
     float rotX = -CC_RADIANS_TO_DEGREES(atan2f(-direction.y, projLen));
     setRotation3D(Vec3(rotX, rotY, 0.0f));
+    if (true)
+    {
+        ;
+    }
+    Node::onExit();
 }
 
 BaseLight::BaseLight()
